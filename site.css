@@ -1,0 +1,960 @@
+/* ============================================================ */
+/* RESET i PODSTAWY – szklana, błękitna elegancja               */
+/* ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background: #0a0e1a;
+    background-image: 
+        radial-gradient(ellipse at 20% 30%, rgba(64, 128, 255, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(100, 180, 255, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 50%, rgba(30, 60, 150, 0.03) 0%, transparent 70%);
+    color: #e8edf5;
+    line-height: 1.8;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ============================================================ */
+/* SZKLANY EFEKT – baza                                         */
+/* ============================================================ */
+
+.glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 
+        0 8px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================ */
+/* SCROLLBAR – błękitny, kryształowy                            */
+/* ============================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #0a0e1a;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(64, 128, 255, 0.05);
+    border-left: 1px solid rgba(64, 128, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(64, 180, 255, 0.4), rgba(30, 80, 200, 0.4));
+    border-radius: 10px;
+    border: 1px solid rgba(64, 180, 255, 0.1);
+    box-shadow: 0 0 30px rgba(64, 180, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(64, 180, 255, 0.6), rgba(30, 80, 200, 0.6));
+    box-shadow: 0 0 50px rgba(64, 180, 255, 0.2);
+}
+
+/* ============================================================ */
+/* HEADER – szklany, luksusowy                                  */
+/* ============================================================ */
+
+header {
+    background: rgba(10, 14, 30, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(64, 180, 255, 0.08);
+    box-shadow: 
+        0 8px 60px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+header > a {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #b8d4ff;
+    text-decoration: none;
+    text-shadow: 0 0 40px rgba(64, 180, 255, 0.1);
+    font-family: 'Playfair Display', serif;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+header > a::after {
+    content: '✦';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: rgba(64, 180, 255, 0.2);
+    animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% { opacity: 0.2; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.6; transform: translateY(-60%) scale(1.2); }
+}
+
+header > a:hover {
+    text-shadow: 0 0 60px rgba(64, 180, 255, 0.2), 0 0 120px rgba(64, 180, 255, 0.05);
+    transform: scale(1.02);
+}
+
+header > a span {
+    color: #5ba3ff;
+    text-shadow: 0 0 30px rgba(64, 180, 255, 0.2);
+}
+
+/* ============================================================ */
+/* NAWIGACJA – kryształowe linki                                */
+/* ============================================================ */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: rgba(180, 210, 255, 0.7);
+    font-weight: 400;
+    font-size: 14px;
+    padding: 8px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '◇ ';
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    opacity: 0.5;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    border-color: rgba(64, 180, 255, 0.15);
+    background: rgba(64, 180, 255, 0.04);
+    text-shadow: 0 0 40px rgba(64, 180, 255, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 40px rgba(64, 180, 255, 0.03);
+}
+
+nav ul li a:active {
+    transform: scale(0.95);
+}
+
+/* ============================================================ */
+/* SEKCJE – szklane panele                                      */
+/* ============================================================ */
+
+section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 70px 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-margin-top: 80px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(64, 180, 255, 0.04);
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 80px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+section:hover {
+    border-color: rgba(64, 180, 255, 0.08);
+    box-shadow: 
+        0 30px 100px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(64, 128, 255, 0.02) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(64, 180, 255, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+    border-radius: 24px;
+}
+
+section:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+/* ============================================================ */
+/* SEKCJE – różne odcienie błękitu                              */
+/* ============================================================ */
+
+#home {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(64, 180, 255, 0.06);
+}
+
+#home::after {
+    content: '✦';
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    font-size: 60px;
+    opacity: 0.02;
+    transform: rotate(-5deg);
+    pointer-events: none;
+}
+
+#about {
+    background: rgba(255, 255, 255, 0.015);
+    border-color: rgba(64, 180, 255, 0.04);
+}
+
+#services {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(64, 180, 255, 0.05);
+}
+
+#portfolio {
+    background: rgba(255, 255, 255, 0.015);
+    border-color: rgba(64, 180, 255, 0.04);
+}
+
+#contact {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(64, 180, 255, 0.06);
+    border-bottom: 2px solid rgba(64, 180, 255, 0.04);
+}
+
+/* ============================================================ */
+/* TYPOGRAFIA – elegancka, fantasy                              */
+/* ============================================================ */
+
+section h1 {
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #e8edf5;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 0 60px rgba(64, 180, 255, 0.03);
+}
+
+section h1 span {
+    color: #5ba3ff;
+    text-shadow: 0 0 40px rgba(64, 180, 255, 0.15);
+    animation: gentleGlow 4s ease-in-out infinite;
+}
+
+@keyframes gentleGlow {
+    0%, 100% { text-shadow: 0 0 40px rgba(64, 180, 255, 0.1); }
+    50% { text-shadow: 0 0 80px rgba(64, 180, 255, 0.2), 0 0 120px rgba(64, 180, 255, 0.05); }
+}
+
+section h2 {
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #b8d4ff;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 0 40px rgba(64, 180, 255, 0.03);
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: ' ✦';
+    color: rgba(64, 180, 255, 0.15);
+    font-size: 28px;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+section h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #c8ddf5;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+section p {
+    font-size: 19px;
+    color: rgba(200, 220, 245, 0.8);
+    max-width: 700px;
+    margin-bottom: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 2;
+    font-weight: 300;
+}
+
+section p::first-letter {
+    font-size: 34px;
+    color: #5ba3ff;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+}
+
+/* ============================================================ */
+/* LINKI – szklane przyciski                                    */
+/* ============================================================ */
+
+section a:not(nav a) {
+    display: inline-block;
+    background: rgba(64, 180, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #b8d4ff;
+    font-weight: 400;
+    padding: 14px 38px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.5s ease;
+    border: 1px solid rgba(64, 180, 255, 0.08);
+    letter-spacing: 2px;
+    margin-right: 14px;
+    margin-bottom: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    text-shadow: 0 0 20px rgba(64, 180, 255, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+section a:not(nav a)::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(64, 180, 255, 0.03), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+section a:not(nav a):hover::before {
+    opacity: 1;
+}
+
+section a:not(nav a):hover {
+    background: rgba(64, 180, 255, 0.06);
+    border-color: rgba(64, 180, 255, 0.15);
+    box-shadow: 
+        0 0 60px rgba(64, 180, 255, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px) scale(1.01);
+    color: #ffffff;
+}
+
+section a:not(nav a):nth-child(2) {
+    background: transparent;
+    border-color: rgba(64, 180, 255, 0.04);
+    color: rgba(180, 210, 255, 0.6);
+}
+
+section a:not(nav a):nth-child(2):hover {
+    background: rgba(64, 180, 255, 0.02);
+    border-color: rgba(64, 180, 255, 0.1);
+    color: #ffffff;
+    box-shadow: 0 0 40px rgba(64, 180, 255, 0.02);
+}
+
+/* ============================================================ */
+/* LISTA – kryształowe statystyki                               */
+/* ============================================================ */
+
+#about ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+#about ul li {
+    font-size: 17px;
+    color: rgba(200, 220, 245, 0.6);
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    padding-left: 25px;
+    font-weight: 300;
+}
+
+#about ul li::before {
+    content: '✦';
+    position: absolute;
+    left: -5px;
+    top: -2px;
+    font-size: 14px;
+    color: rgba(64, 180, 255, 0.2);
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+#about ul li strong {
+    font-size: 36px;
+    color: #5ba3ff;
+    display: block;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 0 40px rgba(64, 180, 255, 0.05);
+}
+
+/* ============================================================ */
+/* KARTY – szklane, jak w Genshin                              */
+/* ============================================================ */
+
+#services > div,
+#portfolio > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+#services > div > div,
+#portfolio > div > div {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(64, 180, 255, 0.04);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+#services > div > div::before,
+#portfolio > div > div::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(64, 180, 255, 0.02), transparent, rgba(64, 180, 255, 0.01));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+#services > div > div:hover::before,
+#portfolio > div > div:hover::before {
+    opacity: 1;
+}
+
+#services > div > div:hover,
+#portfolio > div > div:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(64, 180, 255, 0.08);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.15),
+        0 0 60px rgba(64, 180, 255, 0.01);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+#services > div > div h3,
+#portfolio > div > div h3 {
+    color: #b8d4ff;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+#services > div > div:hover h3,
+#portfolio > div > div:hover h3 {
+    color: #ffffff;
+}
+
+#services > div > div h3::before,
+#portfolio > div > div h3::before {
+    content: '◇ ';
+    color: rgba(64, 180, 255, 0.1);
+    opacity: 0.5;
+}
+
+#services > div > div p,
+#portfolio > div > div p {
+    font-size: 16px;
+    color: rgba(180, 210, 255, 0.5);
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+}
+
+/* ============================================================ */
+/* FORMULARZ – szklany, eteryczny                               */
+/* ============================================================ */
+
+form {
+    max-width: 600px;
+    margin: 16px 0 30px;
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+form label {
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(180, 210, 255, 0.6);
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid rgba(64, 180, 255, 0.04);
+    border-radius: 16px;
+    font-size: 17px;
+    font-family: 'Cormorant Garamond', serif;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #e8edf5;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: rgba(64, 180, 255, 0.1);
+    box-shadow: 
+        0 0 40px rgba(64, 180, 255, 0.02),
+        inset 0 0 40px rgba(64, 180, 255, 0.01);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: rgba(180, 210, 255, 0.15);
+    font-weight: 300;
+}
+
+form button {
+    background: rgba(64, 180, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #b8d4ff;
+    font-weight: 400;
+    font-size: 17px;
+    padding: 14px 44px;
+    border: 1px solid rgba(64, 180, 255, 0.06);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+form button::before {
+    content: '✦ ';
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+form button:hover::before {
+    opacity: 0.5;
+}
+
+form button:hover {
+    background: rgba(64, 180, 255, 0.06);
+    border-color: rgba(64, 180, 255, 0.1);
+    box-shadow: 
+        0 0 60px rgba(64, 180, 255, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transform: translateY(-2px);
+    color: #ffffff;
+    letter-spacing: 4px;
+}
+
+/* ============================================================ */
+/* DANE KONTAKTOWE – szklana wizytówka                         */
+/* ============================================================ */
+
+#contact > div:last-of-type {
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 24px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(64, 180, 255, 0.04);
+    max-width: 500px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+#contact > div:last-of-type:hover {
+    border-color: rgba(64, 180, 255, 0.06);
+    box-shadow: 0 0 40px rgba(64, 180, 255, 0.01);
+}
+
+#contact > div:last-of-type::after {
+    content: '✦';
+    position: absolute;
+    top: -15px;
+    right: -5px;
+    font-size: 30px;
+    opacity: 0.03;
+    transform: rotate(15deg);
+}
+
+#contact > div:last-of-type p {
+    margin-bottom: 6px;
+    font-size: 17px;
+    color: rgba(200, 220, 245, 0.5);
+}
+
+#contact > div:last-of-type p strong {
+    color: #b8d4ff;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* ============================================================ */
+/* STOPKA – szklana, delikatna                                  */
+/* ============================================================ */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(10, 14, 30, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(180, 210, 255, 0.2);
+    border-top: 1px solid rgba(64, 180, 255, 0.03);
+    box-shadow: 0 -20px 80px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+footer a {
+    color: rgba(180, 210, 255, 0.2);
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+}
+
+footer a:hover {
+    color: rgba(180, 210, 255, 0.5);
+    text-shadow: 0 0 30px rgba(64, 180, 255, 0.05);
+}
+
+/* ============================================================ */
+/* SELEKCJA – błękitny akcent                                   */
+/* ============================================================ */
+
+::selection {
+    background: rgba(64, 180, 255, 0.15);
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(64, 180, 255, 0.1);
+}
+
+/* ============================================================ */
+/* DEKORACJE – jak w Genshin                                   */
+/* ============================================================ */
+
+body::after {
+    content: '✦';
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 80px;
+    opacity: 0.02;
+    pointer-events: none;
+    transform: rotate(-8deg) scaleX(-1);
+    z-index: -1;
+    filter: blur(1px);
+}
+
+body::before {
+    content: '◇';
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    font-size: 50px;
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: -1;
+    transform: rotate(20deg);
+}
+
+/* Delikatny błękitny blask na krawędziach */
+section:last-of-type {
+    position: relative;
+}
+
+section:last-of-type::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(64, 180, 255, 0.06), transparent);
+}
+
+/* ============================================================ */
+/* RESPONSYWNOŚĆ                                                */
+/* ============================================================ */
+
+@media (max-width: 768px) {
+    header {
+        padding: 14px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    header > a {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    header > a::after {
+        display: none;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+        padding: 6px 14px;
+        letter-spacing: 1px;
+    }
+
+    nav ul li a::before {
+        display: none;
+    }
+
+    section {
+        padding: 40px 20px;
+        min-height: auto;
+        scroll-margin-top: 130px;
+        margin: 15px 10px;
+        border-radius: 16px;
+    }
+
+    section h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+
+    section h2 {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    section h2::after {
+        font-size: 18px;
+    }
+
+    section p {
+        font-size: 17px;
+    }
+
+    section p::first-letter {
+        font-size: 26px;
+    }
+
+    section a:not(nav a) {
+        padding: 12px 24px;
+        font-size: 14px;
+        display: block;
+        text-align: center;
+        margin-right: 0;
+        letter-spacing: 1px;
+    }
+
+    #about ul {
+        gap: 20px;
+    }
+
+    #about ul li strong {
+        font-size: 28px;
+    }
+
+    #about ul li::before {
+        display: none;
+    }
+
+    #services > div,
+    #portfolio > div {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    #contact > div:last-of-type {
+        max-width: 100%;
+        padding: 18px 20px;
+    }
+
+    #contact > div:last-of-type::after {
+        font-size: 20px;
+        top: -10px;
+        right: -2px;
+    }
+
+    body::after {
+        font-size: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    body::before {
+        font-size: 30px;
+        top: 15px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 10px;
+        padding: 4px 10px;
+        letter-spacing: 0.5px;
+    }
+
+    section h1 {
+        font-size: 26px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    header > a {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    section {
+        padding: 30px 16px;
+        margin: 10px 6px;
+        border-radius: 12px;
+    }
+
+    section p {
+        font-size: 15px;
+    }
+}
+
+/* ============================================================ */
+/* GENSHIN GLASS – dodatkowe efekty                            */
+/* ============================================================ */
+
+/* Szklane iskierki na hover */
+section:hover::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(64, 180, 255, 0.03), transparent);
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0; left: 20%; right: 20%; }
+    50% { opacity: 1; left: 10%; right: 10%; }
+}
+
+/* Błękitna poświata na kartach */
+#services > div > div::after,
+#portfolio > div > div::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(64, 180, 255, 0.03), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#services > div > div:hover::after,
+#portfolio > div > div:hover::after {
+    opacity: 1;
+}
+
+/* Kryształowe obramowanie inputów */
+form input:focus,
+form textarea:focus {
+    background: rgba(255, 255, 255, 0.025);
+    border-color: rgba(64, 180, 255, 0.08);
+    box-shadow: 
+        0 0 60px rgba(64, 180, 255, 0.02),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
