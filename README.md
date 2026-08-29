@@ -19,7 +19,6 @@ The design is inspired by the **"Glam Blue / Genshin Glass"** aesthetic – a gl
 
 - **HTML5**
 - **CSS3** (Glass-morphism, custom fonts)
-- **JavaScript** (for the dynamic anime gallery)
 - **GitHub Pages** – hosted on [GitHub Pages](https://pages.github.com/)
 
 ## 🚀 Live Demo
