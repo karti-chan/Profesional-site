@@ -24,7 +24,7 @@ The design is inspired by the **"Glam Blue / Genshin Glass"** aesthetic – a gl
 ## 🚀 Live Demo
 
 The site is live at:  
-[https://karti-chan.github.io/amenora/](https://karti-chan.github.io/amenora/)
+[https://https://karti-chan.github.io/Profesional-site/)
 
 *(or under a custom domain, if you added one)*
 
